@@ -14,11 +14,11 @@ export function Note({onDelete}: NoteProps) {
     <>
       <Row className="align-items-center mb-4">
         <Col>
-          <h1>{note.title}</h1>
+          <h1 className="mb-3">{note.title}</h1>
           {note.tags.length > 0 && (
             <Stack gap={1} direction="horizontal" className=" flex-wrap">
               {note.tags.map((tag) => (
-                <Badge key={tag.id} className="text-truncate">
+                <Badge key={tag.id} className="text-truncate p-2 mt-1">
                   {tag.label}
                 </Badge>
               ))}
@@ -26,7 +26,7 @@ export function Note({onDelete}: NoteProps) {
           )}
         </Col>
         <Col xs="auto">
-          <Stack gap={2} direction="horizontal">
+          <Stack gap={2} direction="horizontal" className="mt-5">
             <Link to={`/${note.id}/edit`}>
               <Button variant="primary">Edit</Button>
             </Link>
