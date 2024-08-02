@@ -11,8 +11,8 @@
     "preview": "vite preview",
     "start": "node index.js",
     "format": "npx prettier --write .",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
