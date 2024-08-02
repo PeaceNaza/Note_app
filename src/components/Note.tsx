@@ -13,8 +13,8 @@ export function Note({onDelete}: NoteProps) {
   return (
     <>
       <Row className="align-items-center mb-4">
-        <Col>
-          <h1 className="mb-3">{note.title}</h1>
+        <Col >
+          <h1>{note.title}</h1>
           {note.tags.length > 0 && (
             <Stack gap={1} direction="horizontal" className=" flex-wrap">
               {note.tags.map((tag) => (
