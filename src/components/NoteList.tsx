@@ -4,7 +4,7 @@ import ReactSelect from "react-select";
 import { useMemo, useState } from "react";
 import { Tag } from "../App";
 import styles from "../NoteList.module.css";
-import { Note } from "../App";
+
 
 type SimplifiedNote = {
   id: string;
