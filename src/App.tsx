@@ -93,7 +93,7 @@ const App = () => {
     });
   }
   return (
-    <Container className="my-3">
+    <Container className="my-4">
       <Routes>
         <Route path="/" element={<NoteList notes={notesWithTags} availableTags={tags} onUpdateTag={updateTag} onDeleteTag={deleteTag} />} />
         <Route
