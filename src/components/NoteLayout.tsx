@@ -1,19 +1,23 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Note } from "../App";
-import { useParams, Navigate, Outlet } from "react-router-dom";
+import { useParams, Navigate, Outlet, useOutletContext } from "react-router-dom";
 
 type NoteLayoutProps = {
   notes: Note[];
 };
 
-const NoteLayout = ({ notes }: NoteLayoutProps) => {
+export default function NoteLayout({ notes }: NoteLayoutProps){
   const { id } = useParams();
-  const note = notes.find((note) => note.id === id);
+  const note = notes.find(n => n.id === id);
 
-  if (note == null) {
-    return <Navigate to="/" replace />;
+  if (note == null) 
+    return <Navigate to="/" replace />
+
     return <Outlet context={note} />;
-  }
-  return <div></div>;
-};
+  
+}
 
-export default NoteLayout;
+
+export function useNote() {
+  return useOutletContext<Note>();
+}

@@ -11,17 +11,17 @@ type NoteFormProps = {
   onSubmit: (data: NoteData) => void;
   onAddTag: (tag: Tags) => void;
   availableTags: Tags[];
-};
+} & Partial<NoteData>;
 
 type Tags = {
   id: string;
   label: string;
 };
 
-const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
+const NoteForm = ({ onSubmit, onAddTag, availableTags, title = "", markdown = "", tags = [] }: NoteFormProps) => {
   const titleRef = useRef<HTMLInputElement>(null);
   const mackdownRef = useRef<HTMLTextAreaElement>(null);
-  const [selectedTags, setSelectedTags] = useState<Tags[]>([]);
+  const [selectedTags, setSelectedTags] = useState<Tags[]>(tags);
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,7 +41,7 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
           <Col>
             <Form.Group controlId="title">
               <Form.Label>Title</Form.Label>
-              <Form.Control ref={titleRef} required />
+              <Form.Control ref={titleRef} defaultValue={title} required />
             </Form.Group>
           </Col>
           <Col>
@@ -73,7 +73,7 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
         </Row>
         <Form.Group controlId="markdown">
           <Form.Label>Body</Form.Label>
-          <Form.Control required as="textarea" ref={mackdownRef} rows={15} />
+          <Form.Control defaultValue={markdown} required as="textarea" ref={mackdownRef} rows={15} />
         </Form.Group>
         <Stack direction="horizontal" gap={2} className="justify-content-end">
           <Button variant="primary" type="submit">
