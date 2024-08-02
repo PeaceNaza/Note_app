@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# Note Taking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and lightweight note-taking application with mackdown support built with React vite, TypeScript, and bootstrap.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create Notes: Users can create new notes with a title, content, and optional tags.
+- Edit Notes: Users can edit the title, content, and tags of existing notes.
+- Tag Management: Users can add, edit, and remove tags associated with their notes.
+- Search and Filter: Users can search for notes by title or tag, and filter the note list by tags.
+- Responsive Design: The application is designed to work seamlessly on desktop, tablet, and mobile devices.
 
-## Expanding the ESLint configuration
+### Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+React
+TypeScript
+Vite
+Bootstrap (for styling)
+React Router (for routing)
+React Icons (for icons)
+React Markdown (for markdown rendering)
 
-- Configure the top-level `parserOptions` property like this:
+### Contributing
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json", "./tsconfig.app.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
